@@ -16,9 +16,14 @@ namespace SpaceShooter
         static public SpriteBatch SpriteBatch { get; set; }
         static Star[] stars;
         static public StarShip StarShip { get; set; }
+        static List<Fure> fures = new List<Fure>();
         static public int GenereteRandom(int min, int max)
         {
             return random.Next(min, max);
+        }
+        static public void ShipFire()
+        {
+            fures.Add(new Fure(StarShip.GetPosForFure));
         }
         static public void Init(SpriteBatch SpriteBatch, int Width, int Height)
         {
@@ -36,6 +41,8 @@ namespace SpaceShooter
         {
             foreach (Star star in stars)
                 star.Drow();
+            foreach (Fure fure in fures)
+                fure.Drow();
             StarShip.Drow();
             
 
@@ -45,6 +52,15 @@ namespace SpaceShooter
             foreach (Star star in stars)
             {
                 star.Update();
+            }
+            for (int i = 0;i < fures.Count;i++)
+            {
+                fures[i].Update();
+                if (fures[i].Hidden)
+                {
+                    fures.RemoveAt(i);
+                    i--;
+                }
             }
         }
     }
@@ -86,11 +102,48 @@ namespace SpaceShooter
         }
     }
 
+    class Fure
+    {
+        Vector2 Pos;
+        Vector2 Dir;
+        int speed = 5;
+        Color color = Color.White;
+
+        public static Texture2D Texture2D { get; set; }
+
+        public Fure(Vector2 pos)
+        {
+            this.Pos = pos;
+            this.Dir = new Vector2(speed, 0);
+        } 
+        public bool Hidden
+        {
+            get
+            {
+                return Pos.X > Asteroids.width;
+            }
+        }
+        public void Update()
+        {            
+            if (Pos.X <= Asteroids.width)
+            {
+                Pos += Dir;
+            }
+        }        
+
+        public void Drow()
+        {
+            Asteroids.SpriteBatch.Draw(Texture2D, Pos, color);
+        }
+    }
+
     class StarShip
     {
         Vector2 Pos;        
         Color color = Color.White;
         public int Speed { get; set; } = 3;
+
+        public Vector2 GetPosForFure => new Vector2(Pos.X+25, Pos.Y+ 25);
 
         public static Texture2D Texture2D { get; set; }
 

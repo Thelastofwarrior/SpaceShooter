@@ -39,3 +39,5 @@ C:\Users\ayrat\source\repos\TaskstudiesProject\TaskstudiesProject\SpaceShooter\S
 C:\Users\ayrat\source\repos\TaskstudiesProject\TaskstudiesProject\SpaceShooter\SpaceShooter\bin\Debug\net6.0-windows\Content\MenuFont.xnb
 C:\Users\ayrat\source\repos\TaskstudiesProject\TaskstudiesProject\SpaceShooter\SpaceShooter\bin\Debug\net6.0-windows\Content\star.xnb
 C:\Users\ayrat\source\repos\TaskstudiesProject\TaskstudiesProject\SpaceShooter\SpaceShooter\bin\Debug\net6.0-windows\Content\spece_shuttle.xnb
+C:\Users\ayrat\source\repos\TaskstudiesProject\TaskstudiesProject\SpaceShooter\SpaceShooter\obj\Debug\net6.0-windows\SpaceShooter.sourcelink.json
+C:\Users\ayrat\source\repos\TaskstudiesProject\TaskstudiesProject\SpaceShooter\SpaceShooter\bin\Debug\net6.0-windows\Content\Blaster_shot.xnb

@@ -17,7 +17,7 @@ namespace SpaceShooter
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         Stat Stat = Stat.SpaceMenu;
-        
+        KeyboardState keyboardState, oldKeyboardState;
 
         public Game1()
         {
@@ -45,12 +45,14 @@ namespace SpaceShooter
             Asteroids.Init(_spriteBatch, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
             Star.Texture2D = Content.Load<Texture2D>("star");
             StarShip.Texture2D = Content.Load<Texture2D>("spece_shuttle");
+            Fure.Texture2D = Content.Load<Texture2D>("Blaster_shot");
             // Загрузка контента
         }
+               
 
         protected override void Update(GameTime gameTime)
         {
-            KeyboardState keyboardState = Keyboard.GetState();
+            keyboardState = Keyboard.GetState();
             switch(Stat)
             {
                 case Stat.SpaceMenu:
@@ -64,15 +66,16 @@ namespace SpaceShooter
                     if (keyboardState.IsKeyDown(Keys.Down)) Asteroids.StarShip.Down();
                     if (keyboardState.IsKeyDown(Keys.Left)) Asteroids.StarShip.Left();
                     if (keyboardState.IsKeyDown(Keys.Right)) Asteroids.StarShip.Right();
+                    if (keyboardState.IsKeyDown(Keys.Space) && oldKeyboardState.IsKeyUp(Keys.Space))Asteroids.ShipFire();
                     break;
             }
 
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
-               Exit();
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || keyboardState.IsKeyDown(Keys.Escape))
+               //Exit();
 
             // Обработка клавиш с клавиатуры
 
-            
+            oldKeyboardState = keyboardState;
             base.Update(gameTime);
         }
 

@@ -4,12 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/ayrat/source/repos/TaskstudiesProject/TaskstudiesProject/SpaceShooter/SpaceShooter/Content/Blaster_shot.png</File>
     <File>C:/Users/ayrat/source/repos/TaskstudiesProject/TaskstudiesProject/SpaceShooter/SpaceShooter/Content/File.spritefont</File>
     <File>C:/Users/ayrat/source/repos/TaskstudiesProject/TaskstudiesProject/SpaceShooter/SpaceShooter/Content/Spaceimage.jpg</File>
     <File>C:/Users/ayrat/source/repos/TaskstudiesProject/TaskstudiesProject/SpaceShooter/SpaceShooter/Content/spece shuttle.png</File>
     <File>C:/Users/ayrat/source/repos/TaskstudiesProject/TaskstudiesProject/SpaceShooter/SpaceShooter/Content/star.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>Blaster_shot</File>
     <File>MenuFont</File>
     <File>Background</File>
     <File>spece_shuttle</File>
